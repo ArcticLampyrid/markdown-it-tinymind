@@ -36,7 +36,7 @@ const processTinyMind = (md: markdownIt, token: Token, env: any) => {
     var nodePath: MindMapNodeInfo[] = [];
     for (const curLine of lines) {
         var topic = curLine.trim();
-        var indent = curLine.match(/^[ \t]+/)[0].replace("\t", "    ").length;
+        var indent = curLine.match(/^[ \t]*/)[0].replace("\t", "    ").length;
         var node: MindMapNodeInfo = new MindMapNodeInfo(topic, indent, 1);
         while (nodePath.length > 0 && nodePath[nodePath.length - 1].indent >= indent) {
             nodePath.pop();

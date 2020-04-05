@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-tinymind",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MindMap plugin for markdown-it.",
   "main": "dist/src/index.js",
   "repository": "git@github.com:1354092549/markdown-it-tinymind.git",
@@ -13,5 +13,8 @@
   },
   "scripts": {
     "build": "tsc"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   }
 }
