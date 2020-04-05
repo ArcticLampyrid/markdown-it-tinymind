@@ -34,6 +34,7 @@ const processTinyMind = (md: markdownIt, token: Token, env: any) => {
     var code = token.content;
     var lines = code.match(/[^\r\n]+/g);
     var nodePath: MindMapNodeInfo[] = [];
+    var roots: MindMapNodeInfo[] = [];
     for (const curLine of lines) {
         var topic = curLine.trim();
         var indent = curLine.match(/^[ \t]*/)[0].replace("\t", "    ").length;
@@ -46,13 +47,15 @@ const processTinyMind = (md: markdownIt, token: Token, env: any) => {
             node.level = parentNode.level + 1;
             parentNode.children.push(node);
         }
+        else {
+            roots.push(node);
+        }
         nodePath.push(node);
     }
-    nodePath = nodePath.filter(x => x.level == 1);
     var result = '';
     result += `<div class="tinymap">`;
-    for (const child of nodePath) {
-        result += child.render(md, env);
+    for (const root of roots) {
+        result += root.render(md, env);
     }
     result += `</div>`;
     return result;

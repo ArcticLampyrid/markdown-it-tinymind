@@ -5,3 +5,4 @@ src/**
 .gitignore
 tsconfig.json
 screenshot/**
+.vscode/**
