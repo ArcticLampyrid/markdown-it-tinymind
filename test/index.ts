@@ -19,3 +19,6 @@ console.log(mdi.render(`\`\`\`tinymind
             M
             N\`CodeHere\`
 \`\`\``))
+console.log(mdi.render(`\`\`\`{.tinymind}
+    A
+\`\`\``))

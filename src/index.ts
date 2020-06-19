@@ -61,11 +61,13 @@ const processTinyMind = (md: markdownIt, token: Token, env: any) => {
     return result;
 }
 
+const idRecognizer = /^\s*(?:(?:{(?:.*\s+)?\.tinymind(?:\s+.*)?})|tinymind)\s*$/i;
+
 const TinyMindPlugin = (md: markdownIt) => {
     const temp = md.renderer.rules.fence.bind(md.renderer.rules);
     md.renderer.rules.fence = (tokens, idx, options, env, slf) => {
         const token = tokens[idx];
-        if (token.info === 'tinymind') {
+        if (idRecognizer.test(token.info)) {
             return processTinyMind(md, token, env);
         }
         return temp(tokens, idx, options, env, slf);
