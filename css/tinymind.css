@@ -46,20 +46,17 @@
     background-color: #558ed5;
 }
 
-.tinymap-children>table:nth-child(1)>tbody>tr>.tinymap-topic-container:before
-{
+.tinymap-children>table:nth-child(1)>tbody>tr>.tinymap-topic-container:before {
     transform: rotate(-8deg);
     transform-origin: 0 0;
 }
 
-.tinymap-children>table:nth-last-child(1)>tbody>tr>.tinymap-topic-container::before
-{
+.tinymap-children>table:nth-last-child(1)>tbody>tr>.tinymap-topic-container::before {
     transform: rotate(8deg);
     transform-origin: 0.05em 0;
 }
 
-.tinymap-children>table:only-child>tbody>tr>.tinymap-topic-container::before
-{
+.tinymap-children>table:only-child>tbody>tr>.tinymap-topic-container::before {
     transform: none;
 }
 
@@ -129,4 +126,10 @@
 .tinymap table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+.tinymap {
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
