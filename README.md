@@ -11,6 +11,7 @@ npm install markdown-it-tinymind --save
 
 ## Usage
 ```js
+// Remember to import css/tinymind.css
 import markdownIt from 'markdown-it'
 import markdownItTinyMind from '../src/index'
 
@@ -35,4 +36,4 @@ console.log(mdi.render(`\`\`\`tinymind
 ```
 
 ## Screenshot
-![Screenshot 1](https://github.com/1354092549/markdown-it-tinymind/blob/master/screenshot/1.png)   
+![Screenshot 1](https://raw.githubusercontent.com/1354092549/markdown-it-tinymind/master/screenshot/1.png)   
